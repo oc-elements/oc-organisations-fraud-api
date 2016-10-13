@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>oc-organisations-fraud-api test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../oc-organisations-fraud-api.html">
+  </head>
+  <body>
+
+    <test-fixture id="basic">
+      <template>
+        <oc-organisations-fraud-api></oc-organisations-fraud-api>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('oc-organisations-fraud-api', function() {
+
+        test('instantiating the element works', function() {
+          var element = fixture('basic');
+          assert.equal(element.is, 'oc-organisations-fraud-api');
+        });
+
+      });
+    </script>
+  </body>
+</html>
