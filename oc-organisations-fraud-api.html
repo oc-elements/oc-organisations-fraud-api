@@ -13,6 +13,7 @@ Element to consume Ordercloud fraud API
 
   <template>
     <iron-ajax id="getAgentFraudList"></iron-ajax>
+    <iron-ajax id="getOrgFraudList"></iron-ajax>
   </template>
 
   <script>
@@ -37,6 +38,24 @@ Element to consume Ordercloud fraud API
           pagesize: pageSize || 20
         };
         return this._generateRequest(this.$.getAgentFraudList);
+      },
+
+      /**
+       * Returns all the fraud by organisation
+       *
+       * @param {Number} orgId
+       * @param {Number} page
+       * @param {Number} pageSize
+       *
+       * @return {Promise}
+       */
+      getOrgFraudList: function(orgId, page, pageSize) {
+        this.$.getOrgFraudList.url = this._url('organisations/fraud/organisation/'+orgId);
+        this.$.getOrgFraudList.params = {
+          page: page || 1,
+          pagesize: pageSize || 20
+        };
+        return this._generateRequest(this.$.getOrgFraudList);
       },
 
     });
